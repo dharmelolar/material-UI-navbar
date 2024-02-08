@@ -49,7 +49,7 @@ function SettingsPage() {
         <h>settings</h>
         {showDemopage ? null : (
           <>
-            <Stack direction="row" paddingTop={2} spacing={2} alignItems="center" justifyContent="center">
+            <Stack className="manual" direction="row" paddingTop={2} spacing={2} alignItems="center" justifyContent="center" >
             <Button variant="contained" color="inherit" onClick={handleDemoClick}>Loop Demo</Button>
             <Button variant="contained" color="inherit">Fork Bot Demo</Button>
             </Stack>

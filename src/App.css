@@ -3,6 +3,11 @@ p {
   color: #39433a; /* Replace with your desired color */
 }
 
+.manual {
+  box-shadow: 0 0 10px rgba(123, 38, 38, 0.2);
+  width: fit-content;
+  margin: 0 auto; /* This will center the content horizontally */
+}
 
 
 /* Current page Name */
@@ -11,7 +16,8 @@ h {
   margin-block: 50px;
   font-weight: bold;
   font-style: oblique;
-  text-shadow: #0ed1a7;
+  color: rgb(88, 90, 89);
+
 }
 
 /* Manual Page Bot number */
@@ -21,18 +27,29 @@ h1 {
   font-weight: bold;
 }
 
+
+
+/* Style between sub divs of manual page content, status, jog, home, move */
 .App {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 25px;
 }
 
-.column {
+.column { /*  */
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5px 10px; /* Add padding inside the box */
+  box-shadow: 0 0 10px rgba(123, 38, 38, 0.2);
 }
 
-.column h2 {
-  margin-bottom: 5px;
+h2 { /* Styling of names like status, jog, home, move  */
+  margin-bottom: 3px;
+  color: rgb(132, 132, 171);
+  padding: 5px 10px; /* Add padding inside the box */
+  width: 150px;
   
 }
+
+

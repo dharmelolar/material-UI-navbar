@@ -13,7 +13,6 @@ function App() {
        <div className="column" style={{ textAlign: "center" }}>
         <h2>Status</h2>
           <Stack direction="row" paddingTop={2} spacing={2}>
-      
             <Button variant="contained" color="success">Enable</Button>
             <Button variant="contained" color="success">At Home</Button>
             <Button variant="contained" color="error">Faults</Button>  
@@ -72,7 +71,7 @@ function App() {
           </Stack>
 
           <Stack direction="row" paddingTop={2} spacing={2}>
-          <TextField size='small' id="outlined-basic" label="Enter Actual Torque" variant="outlined" style={{ width: 310 }}
+          <TextField type="number" size='small' id="outlined-basic" label="Enter Max Torque" variant="outlined" style={{ width: 310 }}
           InputProps={{
             endAdornment: <InputAdornment position="end">Nm</InputAdornment>,
           }} />

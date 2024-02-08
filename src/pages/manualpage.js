@@ -19,46 +19,60 @@ function ManualPage() {
         <h>Manual</h>
         {showX_axispage_B1 ? null : (
           <>
-            <h1>Bot - 1</h1>
-            <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-              <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
-              <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
-              <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
-              <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
-            </Stack>
-            <h1>Bot - 2</h1>
-            <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-              <Button variant="contained" color="inherit">X - Axis</Button>
-              <Button variant="contained" color="inherit">Y1 - Axis</Button>
-              <Button variant="contained" color="inherit">Y2 - Axis</Button>
-              <Button variant="contained" color="inherit">Z - Axis</Button>
-            </Stack>
-            <h1>Bot - 3</h1>
-            <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-              <Button variant="contained" color="inherit">X - Axis</Button>
-              <Button variant="contained" color="inherit">Y1 - Axis</Button>
-              <Button variant="contained" color="inherit">Y2 - Axis</Button>
-              <Button variant="contained" color="inherit">Z - Axis</Button>
-            </Stack>
-            <h1>Bot - 4</h1>
-            <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-              <Button variant="contained" color="inherit">X - Axis</Button>
-              <Button variant="contained" color="inherit">Y1 - Axis</Button>
-              <Button variant="contained" color="inherit">Y2 - Axis</Button>
-              <Button variant="contained" color="inherit">Z - Axis</Button>
-            </Stack><br/>
-            <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
-              <Button>Lift - 1</Button>
-              <Button>Indexer - 1</Button>
-              <Button>Lift - 2</Button>
-              <Button>Indexer - 2</Button>
-            </ButtonGroup></stack> <br/>
-            <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
-              <Button>Quich Stick</Button>
-              <Button>PackML</Button>
-              <Button>Setup</Button>
-              <Button>Charging</Button>
-            </ButtonGroup></stack>
+            <div className="manual">
+              <h1>Bot - 1</h1>
+              <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
+              </Stack>
+            </div>
+
+            <div className="manual">
+              <h1>Bot - 2</h1>
+              <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
+                <Button variant="contained" color="inherit">X - Axis</Button>
+                <Button variant="contained" color="inherit">Y1 - Axis</Button>
+                <Button variant="contained" color="inherit">Y2 - Axis</Button>
+                <Button variant="contained" color="inherit">Z - Axis</Button>
+              </Stack>
+            </div>
+
+            <div className="manual">
+              <h1>Bot - 3</h1>
+              <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
+                <Button variant="contained" color="inherit">X - Axis</Button>
+                <Button variant="contained" color="inherit">Y1 - Axis</Button>
+                <Button variant="contained" color="inherit">Y2 - Axis</Button>
+                <Button variant="contained" color="inherit">Z - Axis</Button>
+              </Stack>
+            </div>
+
+            <div className="manual">
+              <h1>Bot - 4</h1>
+              <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
+                <Button variant="contained" color="inherit">X - Axis</Button>
+                <Button variant="contained" color="inherit">Y1 - Axis</Button>
+                <Button variant="contained" color="inherit">Y2 - Axis</Button>
+                <Button variant="contained" color="inherit">Z - Axis</Button>
+              </Stack><br/>
+            </div>
+
+            <div className="manual">
+              <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
+                <Button>Lift - 1</Button>
+                <Button>Indexer - 1</Button>
+                <Button>Lift - 2</Button>
+                <Button>Indexer - 2</Button>
+              </ButtonGroup></stack> <br/>
+              <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
+                <Button>Quich Stick</Button>
+                <Button>PackML</Button>
+                <Button>Setup</Button>
+                <Button>Charging</Button>
+              </ButtonGroup></stack>
+            </div>
             
           </>
         )}
