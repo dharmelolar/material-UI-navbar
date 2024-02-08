@@ -4,45 +4,35 @@ p {
 }
 
 
-strong, .page {
-  color: #007bff;
-  background: #d6f5d7;
-}
 
-.navbar-brand {        /*for Cartesian Kinetics*/
-  color: #0fcb67;
-  font-size: 24px; 
-  font-weight: bold; 
-  background: #225348;
-  background: #acf9a9;
-}
-
+/* Current page Name */
 h {
   font-size: 25px;
   margin-block: 50px;
   font-weight: bold;
   font-style: oblique;
+  text-shadow: #0ed1a7;
 }
 
-h1 {
+/* Manual Page Bot number */
+h1 {               
   font-size: 16px;
   margin-block: 4px;
   font-weight: bold;
 }
 
-.contained-button.success {
-  background-color: #4caf50; /* Green */
-  color: white;
+.App {
+  display: flex;
+  justify-content: space-around;
 }
 
-.contained-button.success.disabled {
-  background-color: #6b6b6b; /* Darkened color */
-  color: #ccc; /* Lighter text color for disabled state */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.fixedTextField {
-  width: 100px;
-  position: fixed;
-  top: 100px;
-  left: 100px;
+.column h2 {
+  margin-bottom: 5px;
+  
 }

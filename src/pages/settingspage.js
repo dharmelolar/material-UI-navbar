@@ -34,7 +34,6 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Demo from "./manualcontent/Demopage";
 
 function SettingsPage() {
   const [showDemopage, setShowDemopage] = useState(false);
@@ -59,7 +58,7 @@ function SettingsPage() {
       </div>
 
       {/* Define the route for the X_axispage_B1 component */}
-      {showDemopage && <Route path="/Demopage" component={""} />}
+      {showDemopage && <Route path="/" component={""} />}
     </Router>
   );
 }
