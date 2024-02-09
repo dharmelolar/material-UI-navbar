@@ -4,6 +4,7 @@ import Navbar from "./component/Navbar";
 import manualpage from "./pages/manualpage";
 import SettingsPage from "./pages/settingspage";
 import './App.css'
+import MyBottomNavigation from "./component/Bottombar";
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" component={""} />
         <Route exact path="/manualpage" component={manualpage} />
         <Route path="/settingspage" component={SettingsPage} />
+        <MyBottomNavigation/>
       </Switch>
     </Router>
   );

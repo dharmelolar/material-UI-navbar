@@ -32,7 +32,7 @@ h1 {
 .App {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
 }
 
 .column { /*  */
@@ -50,5 +50,10 @@ h2 { /* Styling of names like status, jog, home, move  */
   width: 150px;
   
 }
+
+.BottomNav {
+  position: 100%;
+  bottom: 0;
+} 
 
 

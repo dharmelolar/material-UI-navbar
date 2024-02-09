@@ -4,7 +4,6 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
 function ManualPage() {
@@ -18,9 +17,6 @@ function ManualPage() {
     <Router>
       <div style={{ textAlign: "center" }}>
         <br />
-        <Stack id="backward-icon" direction="row" alignItems="center" spacing={1} style={{ position: 'absolute', top: 80, left: 400}}>
-          <Button variant="contained" color="inherit" startIcon={<ArrowBackIosNewIcon />}/>
-        </Stack>
         <h>Manual</h>
         {showX_axispage_B1 ? null : (
           <>

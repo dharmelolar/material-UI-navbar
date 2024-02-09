@@ -2,7 +2,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import SelectionButton from '../../component/selectionbutton';
+// import SelectionButton from '../../component/selectionbutton';
 import React from 'react';
 
 
@@ -96,7 +96,6 @@ function App() {
               defaultValue="NaN"
               style={{ width: 150 }}
               InputProps={{
-                readOnly: true,
                 endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
               }}
             />
@@ -106,9 +105,9 @@ function App() {
               label="Jog Acceleration"
               size="small" 
               defaultValue="NaN"
-              style={{ width: 140 }}
+              style={{ width: 150 }}
               InputProps={{
-                readOnly: true,
+
                 endAdornment: <InputAdornment position="end">%</InputAdornment>,
               }}
             />  
@@ -149,7 +148,7 @@ function App() {
               label="Homing Acceleration"
               size="small" 
               defaultValue="NaN"
-              style={{ width: 140 }}
+              style={{ width: 150 }}
               InputProps={{
                 readOnly: true,
                 endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -191,7 +190,7 @@ function App() {
               label="Move Acceleration"
               size="small" 
               defaultValue="NaN"
-              style={{ width: 140 }}
+              style={{ width: 150 }}
               InputProps={{
                 readOnly: true,
                 endAdornment: <InputAdornment position="end">%</InputAdornment>,

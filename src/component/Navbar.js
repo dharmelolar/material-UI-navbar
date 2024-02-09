@@ -4,9 +4,9 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
-import { IconButton, Tooltip, Avatar, Box } from "@material-ui/core";
-import Logo from "./logo";
+import { IconButton, Tooltip, Avatar, Box,} from "@material-ui/core";
 import ProfilePopover from "../pages/ProfilePopover";
+import CKlogo from './CKlogo.svg'
 
 
 import {
@@ -18,22 +18,19 @@ import {
   useTheme,
   useMediaQuery,
 } from "@material-ui/core";
+import MyBottomNavigation from "./Bottombar";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(5),
     display: "flex",
   },
+  // This is for navbar main content decoration
   link: {
     textDecoration: "none",
-    color: "white",
+    color:'white',
     fontSize: "20px",
-    marginLeft: theme.spacing(20),
-    borderBottom: "1px solid transparent",
-    "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
-    },
+    marginLeft: theme.spacing(5),
   },
   dateTime: {
     marginLeft: "auto", // Aligns date and time to the right
@@ -41,7 +38,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
   },
   appBar: {
-    backgroundColor: "teal", // Change this to whatever color you desire for navbar
+    backgroundColor: "teal", // Navbar Color change
+  },
+  BottomNav: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
   },
 }));
 
@@ -61,61 +63,83 @@ function Navbar() {
     };
   }, []);
 
-  const handleClick = (event) => {
+  const handleProfileClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleProfileClose = () => {
     setAnchorEl(null);
   };
 
   const open = Boolean(anchorEl);
 
   return (
-    <AppBar position="static" className={classes.appBar}>
-      <CssBaseline />
-      <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-        <img src={Logo} alt="Logo" style={{ height: 40, marginRight: 10 }} />
-        </Typography>
-        {isMobile ? (
-          <DrawerComponent />
-        ) : (
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              <IconButton>
-                <HomeIcon />
-                Home
-              </IconButton>
-            </Link>
+    <div>
+      <div >
+      <AppBar position="static" className={classes.appBar}>
+        <CssBaseline />
+        <Toolbar>
+          <Typography variant="h4" className={classes.logo}>
+          <img src={CKlogo} alt="Logo" style={{ height: 55, paddingTop:'10px' , marginRight: 10 }} />
+          </Typography>
+          {isMobile ? (
+            <DrawerComponent />
+          ) : (
+            <div className={classes.navlinks}>
+              <Link to="/" className={classes.link}>
+                <IconButton>
+                  <HomeIcon />
+                  Home
+                </IconButton>
+              </Link>
 
-            <Link to="/manualpage" className={classes.link}>
-              <IconButton>
-                <EngineeringIcon />
-                Manual
-              </IconButton>
-            </Link>
+              <Link to="/manualpage" className={classes.link}>
+                <IconButton>
+                  <EngineeringIcon />
+                  Manual
+                </IconButton>
+              </Link>
 
-            <Link to="/settingspage" className={classes.link}>
-              <IconButton>
-                <SettingsIcon />
-                Settings
-              </IconButton>
-            </Link>
-          </div>
-        )}
-        <div className={classes.dateTime}>{dateTime.toLocaleString()}</div>
+              <Link to="/" className={classes.link}>
+                <IconButton>
+                  <EngineeringIcon />
+                  Parameter
+                </IconButton>
+              </Link>
 
-        <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Profile Settings">
-            <IconButton sx={{ p: 2 }} onClick={handleClick}>
-              <Avatar alt="login" />
-            </IconButton>
-          </Tooltip>
-          <ProfilePopover open={open} anchorEl={anchorEl} onClose={handleClose} />
-        </Box>
-      </Toolbar>
-    </AppBar>
+              <Link to="/" className={classes.link}>
+                <IconButton>
+                  <EngineeringIcon />
+                  Alarm
+                </IconButton>
+              </Link>
+
+              <Link to="/settingspage" className={classes.link}>
+                <IconButton>
+                  <SettingsIcon />
+                  Settings
+                </IconButton>
+              </Link>
+            </div>
+          )}
+          <div className={classes.dateTime}>{dateTime.toLocaleString()}</div>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Profile Settings">
+              <IconButton sx={{ p: 2 }} onClick={handleProfileClick}>
+                <Avatar alt="login" />
+              </IconButton>
+            </Tooltip>
+            <ProfilePopover open={open} anchorEl={anchorEl} onClose={handleProfileClose} />
+          </Box>
+        </Toolbar>
+      </AppBar>
+      </div>
+
+      <div className={classes.BottomNav}>
+        <MyBottomNavigation/>
+      </div>
+    </div>
   );
 }
 export default Navbar;

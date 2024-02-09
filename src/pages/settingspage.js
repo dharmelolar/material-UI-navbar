@@ -1,40 +1,7 @@
-// // Settingspage.js
-// import React,{useState} from "react";
-// import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-
-
-// function SettingsPage() {
-//   const [] = useState(false);
-
-//   const handleDemoClick = () => {
-//     setShow(true);
-//   };
-
-
-//   return (
-//     <div style={{ textAlign: "center" }}>
-//       <br/>
-//         <h>Settings</h>
-//       <Stack direction="row" paddingTop={2} spacing={2} alignItems="center" justifyContent="center">
-//         <Button variant="contained" color="inherit" onClick={handleDemoClick}>Loop Demo</Button>
-//         <Button variant="contained" color="inherit">Fork Bot Demo</Button>
-//       </Stack>
-//     </div>
-//   );
-// }
-// export default SettingsPage;
-
-
-
-
-
-
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 function SettingsPage() {
   const [showDemopage, setShowDemopage] = useState(false);
@@ -47,9 +14,6 @@ function SettingsPage() {
     <Router>
       <div style={{ textAlign: "center" }}>
         <br />
-        <Stack id="backward-icon" direction="row" alignItems="center" spacing={1} style={{ position: 'absolute', top: 80, left: 400}}>
-          <Button variant="contained" color="inherit" startIcon={<ArrowBackIosNewIcon />}/>
-        </Stack>
         <h>settings</h>
         {showDemopage ? null : (
           <>
