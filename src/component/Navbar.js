@@ -4,11 +4,9 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
-import { IconButton } from "@material-ui/core";
-import Box from "@mui/material/Box";
-import Tooltip from "@mui/material/Tooltip";
-import Avatar from "@mui/material/Avatar";
+import { IconButton, Tooltip, Avatar, Box } from "@material-ui/core";
 import Logo from "./logo";
+import ProfilePopover from "../pages/ProfilePopover";
 
 
 import {
@@ -52,6 +50,7 @@ function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [dateTime, setDateTime] = useState(new Date());
+  const [anchorEl, setAnchorEl] = useState(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -61,6 +60,16 @@ function Navbar() {
       clearInterval(timer);
     };
   }, []);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   return (
     <AppBar position="static" className={classes.appBar}>
@@ -99,10 +108,11 @@ function Navbar() {
 
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Profile Settings">
-            <IconButton sx={{ p: 2 }}>
+            <IconButton sx={{ p: 2 }} onClick={handleClick}>
               <Avatar alt="login" />
             </IconButton>
           </Tooltip>
+          <ProfilePopover open={open} anchorEl={anchorEl} onClose={handleClose} />
         </Box>
       </Toolbar>
     </AppBar>

@@ -4,6 +4,8 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+
 
 function ManualPage() {
   const [showX_axispage_B1, setShowX_axispage_B1] = useState(false);
@@ -16,6 +18,9 @@ function ManualPage() {
     <Router>
       <div style={{ textAlign: "center" }}>
         <br />
+        <Stack id="backward-icon" direction="row" alignItems="center" spacing={1} style={{ position: 'absolute', top: 80, left: 400}}>
+          <Button variant="contained" color="inherit" startIcon={<ArrowBackIosNewIcon />}/>
+        </Stack>
         <h>Manual</h>
         {showX_axispage_B1 ? null : (
           <>
@@ -23,9 +28,9 @@ function ManualPage() {
               <h1>Bot - 1</h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
-                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
-                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
-                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
+                <Button variant="contained" color="inherit" >Y1 - Axis</Button>
+                <Button variant="contained" color="inherit" >Y2 - Axis</Button>
+                <Button variant="contained" color="inherit" >Z - Axis</Button>
               </Stack>
             </div>
 
@@ -65,7 +70,7 @@ function ManualPage() {
                 <Button>Indexer - 1</Button>
                 <Button>Lift - 2</Button>
                 <Button>Indexer - 2</Button>
-              </ButtonGroup></stack> <br/>
+              </ButtonGroup></stack><br/>
               <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
                 <Button>Quich Stick</Button>
                 <Button>PackML</Button>
