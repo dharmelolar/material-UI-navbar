@@ -1,8 +1,8 @@
+// manualpage.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
 
 
@@ -21,7 +21,7 @@ function ManualPage() {
         {showX_axispage_B1 ? null : (
           <>
             <div className="manual">
-              <h1>Bot - 1</h1>
+            <h1><Button variant="fab" color="inherit" onClick={""}>Bot - 1</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
                 <Button variant="contained" color="inherit" >Y1 - Axis</Button>
@@ -31,7 +31,7 @@ function ManualPage() {
             </div>
 
             <div className="manual">
-              <h1>Bot - 2</h1>
+            <h1><Button variant="fab" color="inherit">Bot - 2</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Button variant="contained" color="inherit">X - Axis</Button>
                 <Button variant="contained" color="inherit">Y1 - Axis</Button>
@@ -41,7 +41,7 @@ function ManualPage() {
             </div>
 
             <div className="manual">
-              <h1>Bot - 3</h1>
+            <h1><Button variant="fab" color="inherit">Bot - 3</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Button variant="contained" color="inherit">X - Axis</Button>
                 <Button variant="contained" color="inherit">Y1 - Axis</Button>
@@ -51,7 +51,7 @@ function ManualPage() {
             </div>
 
             <div className="manual">
-              <h1>Bot - 4</h1>
+            <h1><Button variant="fab" color="inherit">Bot - 4</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Button variant="contained" color="inherit">X - Axis</Button>
                 <Button variant="contained" color="inherit">Y1 - Axis</Button>
@@ -60,19 +60,19 @@ function ManualPage() {
               </Stack><br/>
             </div>
 
-            <div className="manual">
-              <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
-                <Button>Lift - 1</Button>
-                <Button>Indexer - 1</Button>
-                <Button>Lift - 2</Button>
-                <Button>Indexer - 2</Button>
-              </ButtonGroup></stack><br/>
-              <stack><ButtonGroup variant="contained" color="inherit" aria-label="Basic button group">
-                <Button>Quich Stick</Button>
-                <Button>PackML</Button>
-                <Button>Setup</Button>
-                <Button>Charging</Button>
-              </ButtonGroup></stack>
+            <div>
+              <Stack direction="row" spacing={0.5} alignItems="center" justifyContent="center" paddingBottom={0.5}>
+                <Button variant="contained" color="primary">Lift - 1</Button>
+                <Button variant="contained" color="primary">Indexer -1</Button>
+                <Button variant="contained" color="secondary">Quick Stick</Button>
+                <Button variant="contained" color="secondary">Setup</Button>
+              </Stack>
+              <Stack direction="row" spacing={0.6} alignItems="center" justifyContent="center">
+                <Button variant="contained" color="primary">Lift - 2</Button>
+                <Button variant="contained" color="primary">Indexer - 2</Button>
+                <Button variant="contained" color="secondary">Charging</Button>
+                <Button variant="contained" color="secondary">PackML</Button>
+              </Stack>
             </div>
             
           </>

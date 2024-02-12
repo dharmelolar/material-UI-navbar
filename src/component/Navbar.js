@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import HomeIcon from "@material-ui/icons/Home";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import SettingsIcon from "@mui/icons-material/Settings";
+import TuneIcon from '@mui/icons-material/Tune';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
 import { IconButton, Tooltip, Avatar, Box,} from "@material-ui/core";
@@ -89,7 +91,7 @@ function Navbar() {
               <Link to="/" className={classes.link}>
                 <IconButton>
                   <HomeIcon />
-                  Home
+                  Main
                 </IconButton>
               </Link>
 
@@ -102,15 +104,15 @@ function Navbar() {
 
               <Link to="/" className={classes.link}>
                 <IconButton>
-                  <EngineeringIcon />
+                  <TuneIcon />
                   Parameter
                 </IconButton>
               </Link>
 
               <Link to="/" className={classes.link}>
                 <IconButton>
-                  <EngineeringIcon />
-                  Alarm
+                  <NotificationsActiveIcon />
+                  Alert
                 </IconButton>
               </Link>
 

@@ -9,17 +9,9 @@ import React,{useState} from 'react';
 
 function App() {
   const [maxTorque, setMaxTorque] = useState('');
-  const [isEnabled, setIsEnabled] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleMaxTorqueChange = (event) => {
     setMaxTorque(event.target.value);
-  };
-  const toggleEnable = () => {
-    setIsEnabled(!isEnabled);
-  };
-  const toggleDisabled = () => {
-    setIsDisabled(!isDisabled);
   };
 
   return (
@@ -28,9 +20,9 @@ function App() {
        <div className="column" style={{ textAlign: "center" }}>
         <h2>Status</h2>
           <Stack direction="row" paddingTop={2} spacing={2}>
-            <Button variant="outlined" color="success">Enable</Button>
-            <Button variant="outlined" color="success">At Home</Button>
-            <Button variant="outlined" color="error">Faults</Button>  
+            <Button variant="contained" color="success">Enable</Button>
+            <Button variant="contained" color="success">At Home</Button>
+            <Button variant="contained" color="error">Faults</Button>  
           </Stack>
 
           <Stack direction="row" paddingTop={2} spacing={2}>
@@ -95,100 +87,13 @@ function App() {
           
 
           <Stack direction="row" paddingTop={1.5} spacing={2.9}>
-            <Button variant="contained" color={isEnabled ? "success" : "primary"} onClick={toggleEnable}>
-              {isEnabled ? "Enabled" : "Enable"}
-            </Button>
-            <Button variant="contained" color={isDisabled ? "success" : "primary"} onClick={toggleDisabled}>
-              {isDisabled ? "Disabled" : "Disable"}
-            </Button>
+            <Button variant="contained" color="inherit">Enable</Button>
+            <Button variant="contained" color="inherit">Disable</Button>
             <Button variant="contained" color="inherit">Reset</Button>
             </Stack>
         </div>
       
-      {/* for JOG */}
-        <div className="column" style={{ textAlign: "center"}}>
-        <h2>Jog</h2>
-          <Stack direction="column" paddingTop={2} spacing={2}>
-          <TextField
-              variant="outlined"
-              label="Jog Velocity"
-              size="small"
-              defaultValue="NaN"
-              style={{ width: 150 }}
-              InputProps={{
-                endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
-              }}
-            />
-
-            <TextField
-              variant="outlined"
-              label="Jog Acceleration"
-              size="small" 
-              defaultValue="NaN"
-              style={{ width: 150 }}
-              InputProps={{
-
-                endAdornment: <InputAdornment position="end">%</InputAdornment>,
-              }}
-            />  
-            
-          <TextField
-              variant="outlined"
-              label="Jog Deceleration"
-              size="small"
-              defaultValue="NaN"
-              style={{ width: 150 }}
-              InputProps={{
-                readOnly: true,
-                endAdornment: <InputAdornment position="end">%</InputAdornment>,
-              }}
-            />
-            <Button variant="contained" color="inherit">Jog +</Button>
-            <Button variant="contained" color="inherit">Jog -</Button>
-          </Stack>
-        </div>
-      {/* for HOME */}
-      <div className="column" style={{ textAlign: "center"}}>
-        <h2>Home</h2>
-          <Stack direction="column" paddingTop={2} spacing={2}>
-          <TextField
-              variant="outlined"
-              label="Homing Velocity"
-              size="small"
-              defaultValue="NaN"
-              style={{ width: 150 }}
-              InputProps={{
-                readOnly: true,
-                endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
-              }}
-            />
-
-            <TextField
-              variant="outlined"
-              label="Homing Acceleration"
-              size="small" 
-              defaultValue="NaN"
-              style={{ width: 150 }}
-              InputProps={{
-                readOnly: true,
-                endAdornment: <InputAdornment position="end">%</InputAdornment>,
-              }}
-            />  
-            
-          <TextField
-              variant="outlined"
-              label="Homing Deceleration"
-              size="small"
-              defaultValue="NaN"
-              style={{ width: 150 }}
-              InputProps={{
-                readOnly: true,
-                endAdornment: <InputAdornment position="end">%</InputAdornment>,
-              }}
-            />
-            <Button variant="contained" color="inherit">Home</Button>
-          </Stack>
-        </div>
+      
       {/* for MOVE */}
       <div className="column" style={{ textAlign: "center"}}>
         <h2>Move</h2>
