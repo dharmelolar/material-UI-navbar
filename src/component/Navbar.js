@@ -112,7 +112,7 @@ function Navbar() {
               <Link to="/" className={classes.link}>
                 <IconButton>
                   <NotificationsActiveIcon />
-                  Alert
+                  Alarms
                 </IconButton>
               </Link>
 

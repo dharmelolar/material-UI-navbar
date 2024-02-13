@@ -94,11 +94,11 @@ function App() {
           </Stack>
           
 
-          <Stack direction="row" paddingTop={1.5} spacing={2.9}>
-            <Button variant="contained" color={isEnabled ? "success" : "primary"} onClick={toggleEnable}>
+          <Stack direction="row" paddingTop={1.5} spacing={1.8}>
+            <Button variant="contained" color={isEnabled ? "success" : "primary"} style={{ width: 100 }} onClick={toggleEnable}>
               {isEnabled ? "Enabled" : "Enable"}
             </Button>
-            <Button variant="contained" color={isDisabled ? "success" : "primary"} onClick={toggleDisabled}>
+            <Button variant="contained" color={isDisabled ? "success" : "primary"} style={{ width: 100 }} onClick={toggleDisabled}>
               {isDisabled ? "Disabled" : "Disable"}
             </Button>
             <Button variant="contained" color="inherit">Reset</Button>
