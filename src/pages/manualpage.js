@@ -4,13 +4,19 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
+import All_axispage_B1 from "./manualcontent/all_axispage_B1"
 
 
 function ManualPage() {
+  const [showAll_axispage_B1, setShowAll_axispage_B1] = useState(false);
   const [showX_axispage_B1, setShowX_axispage_B1] = useState(false);
 
   const handleXAxis_B1Click = () => {
     setShowX_axispage_B1(true);
+  };
+  const handleAllAxis_B1Click = () => {
+    setShowAll_axispage_B1(true);
+    setShowX_axispage_B1(false);
   };
 
   return (
@@ -18,45 +24,45 @@ function ManualPage() {
       <div style={{ textAlign: "center" }}>
         <br />
         <h>Manual</h>
-        {showX_axispage_B1 ? null : (
+        {showX_axispage_B1 || showAll_axispage_B1 ? null : (
           <>
             <div className="manual">
-            <h1><Button variant="fab" color="inherit" onClick={""}>Bot - 1</Button></h1>
+            <h1><Button variant="fab" color="inherit" onClick={handleAllAxis_B1Click}>Bot - 1</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
-                <Button variant="contained" color="inherit" >Y1 - Axis</Button>
-                <Button variant="contained" color="inherit" >Y2 - Axis</Button>
-                <Button variant="contained" color="inherit" >Z - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
               </Stack>
             </div>
 
             <div className="manual">
-            <h1><Button variant="fab" color="inherit">Bot - 2</Button></h1>
+            <h1><Button variant="fab" color="inherit" onClick={handleAllAxis_B1Click}>Bot - 2</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-                <Button variant="contained" color="inherit">X - Axis</Button>
-                <Button variant="contained" color="inherit">Y1 - Axis</Button>
-                <Button variant="contained" color="inherit">Y2 - Axis</Button>
-                <Button variant="contained" color="inherit">Z - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
               </Stack>
             </div>
 
             <div className="manual">
-            <h1><Button variant="fab" color="inherit">Bot - 3</Button></h1>
+            <h1><Button variant="fab" color="inherit" onClick={handleAllAxis_B1Click}>Bot - 3</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-                <Button variant="contained" color="inherit">X - Axis</Button>
-                <Button variant="contained" color="inherit">Y1 - Axis</Button>
-                <Button variant="contained" color="inherit">Y2 - Axis</Button>
-                <Button variant="contained" color="inherit">Z - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
               </Stack>
             </div>
 
             <div className="manual">
-            <h1><Button variant="fab" color="inherit">Bot - 4</Button></h1>
+            <h1><Button variant="fab" color="inherit" onClick={handleAllAxis_B1Click}>Bot - 4</Button></h1>
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-                <Button variant="contained" color="inherit">X - Axis</Button>
-                <Button variant="contained" color="inherit">Y1 - Axis</Button>
-                <Button variant="contained" color="inherit">Y2 - Axis</Button>
-                <Button variant="contained" color="inherit">Z - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>X - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y1 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Y2 - Axis</Button>
+                <Button variant="contained" color="inherit" onClick={handleXAxis_B1Click}>Z - Axis</Button>
               </Stack><br/>
             </div>
 
@@ -81,6 +87,7 @@ function ManualPage() {
 
       {/* Define the route for the X_axispage_B1 component */}
       {showX_axispage_B1 && <Route path="/" component={X_axispage_B1} />}
+      {showAll_axispage_B1 && <Route path="/" component={All_axispage_B1} />}
     </Router>
   );
 }
