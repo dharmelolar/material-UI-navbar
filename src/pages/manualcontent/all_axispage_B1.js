@@ -17,6 +17,11 @@ function App() {
     <div className="App">
        {/* for Width */}
        <div className="column" style={{ textAlign: "center" }}>
+       <Stack direction="row" paddingTop={1} spacing={1}>
+            <Button size="small" variant="contained" color="secondary">Enable</Button>
+            <Button size="small" variant="contained" color="secondary">Disable</Button>
+            <Button size="small" variant="contained" color="secondary">Reset</Button>
+          </Stack>
         <h2>Width</h2>
           <Stack direction="row" paddingTop={0.5} spacing={0.5}>
             <Button variant="outlined" color="success">Jog Hold</Button>
@@ -112,6 +117,10 @@ function App() {
           </Stack>
         </div>
         <div className="column" style={{ textAlign: "center" }}>
+        <Stack direction="row" paddingTop={1} spacing={1}>
+            <Button size="small" variant="contained" color="secondary">Test Run</Button>
+            <Button size="small" variant="contained" color="secondary">Test Reset</Button>
+          </Stack>
         <h2>Bot Lift</h2>
           <Stack direction="row" paddingTop={0.5} spacing={0.5}>
             
@@ -206,15 +215,6 @@ function App() {
             <Button size="small" variant="contained" color="inherit">Enable</Button>
             <Button size="small" variant="contained" color="inherit">Disable</Button>
             <Button size="small" variant="contained" color="inherit">Reset</Button>
-          </Stack>
-        </div>
-        <div direction="column">
-        <Stack paddingTop={1} spacing={1}>
-            <Button size="small" variant="contained" color="inherit">Enable</Button>
-            <Button size="small" variant="contained" color="inherit">Disable</Button>
-            <Button size="small" variant="contained" color="inherit">Reset</Button>
-            <Button size="small" variant="contained" color="inherit">Test run</Button>
-            <Button size="small" variant="contained" color="inherit">Reset Test</Button>
           </Stack>
         </div>
     </div>

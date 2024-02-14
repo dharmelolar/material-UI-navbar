@@ -9,7 +9,7 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 
-const options = ['X - Axis', 'Y1 - Axis', 'Y2 - Axis', 'Z - Axis'];
+const options = ['HOME', 'JOG', 'MOVE'];
 
 export default function SelectionButton() {
   const [open, setOpen] = React.useState(false);

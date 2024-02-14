@@ -43,6 +43,10 @@ h1 {
   box-shadow: 0 0 10px rgba(123, 38, 38, 0.2);
 }
 
+.button-container {
+  align-items: baseline;
+}
+
 h2 { /* Styling of names like status, jog, home, move  */
   margin-bottom: 3px;
   color: rgb(132, 132, 171);
@@ -56,4 +60,7 @@ h2 { /* Styling of names like status, jog, home, move  */
   bottom: 0;
 } 
 
-
+.enabledIcon {
+  background-color: green; /* Change to any color you prefer */
+  color: green;
+}
