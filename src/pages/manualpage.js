@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
 import All_axispage_B1 from "./manualcontent/all_axispage_B1"
-import Indexer from "./manualcontent/Indexer"
+import Indexer from "./manualcontent/Indexer copy"
 
 
 function ManualPage() {
