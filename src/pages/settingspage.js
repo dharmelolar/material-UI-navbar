@@ -1,41 +1,5 @@
-// import React, { useState } from "react";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
 
-// function SettingsPage() {
-//   const [showDemopage, setShowDemopage] = useState(false);
-
-//   const handleDemoClick = () => {
-//     setShowDemopage(true);
-//   };
-
-//   return (
-//     <Router>
-//       <div style={{ textAlign: "center" }}>
-//         <br />
-//         <h>settings</h>
-//         {showDemopage ? null : (
-//           <>
-//             <Stack className="manual" direction="row" paddingTop={2} spacing={2} alignItems="center" justifyContent="center" >
-//             <Button variant="contained" color="inherit" onClick={handleDemoClick}>Loop Demo</Button>
-//             <Button variant="contained" color="inherit">Fork Bot Demo</Button>
-//             </Stack>
-//           </>
-//         )}
-//       </div>
-
-//       {/* Define the route for the X_axispage_B1 component */}
-//       {showDemopage && <Route path="/" component={""} />}
-//     </Router>
-//   );
-// }
-
-// export default SettingsPage;
-
-
-
-// manualpage.js
+// settingspage.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Stack from '@mui/material/Stack';

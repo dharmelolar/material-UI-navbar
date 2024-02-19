@@ -5,8 +5,6 @@ import manualpage from "./pages/manualpage";
 import SettingsPage from "./pages/settingspage";
 import './App.css'
 
-
-
 function App() {
   return (
     <Router>
@@ -19,4 +17,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
