@@ -13,7 +13,7 @@ app.add_middleware(
 )
 
 # Variable to store the velocity value
-velocity = "hello"
+velocity = ""
 
 # Endpoint to receive and store the velocity value
 @app.post("/update_velocity")

@@ -13,6 +13,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -125,7 +126,7 @@ export default function FloatingActionButtonZoom() {
 
   {/* ------------------JOG, HOME, MOVE--------------------------------------------------- */}
       <Grid item xs={12} sm={6} lg={3}>
-      <Box sx={{bgcolor: 'background.paper', width: 270, position: 'relative', minHeight: 330}}>
+      <Box sx={{bgcolor: 'background.paper', minHeight: 330}}>
         <AppBar position="static" color="default">
           <Tabs
             value={value}

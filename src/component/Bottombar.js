@@ -3,7 +3,7 @@ import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import {Home, ArrowBackIos} from '@material-ui/icons';
 import { DarkMode } from '@mui/icons-material';
 
-
+// Styling is in Navbar.js file.
 function MyBottomNavigation() {
   
   return (

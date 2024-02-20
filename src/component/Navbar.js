@@ -43,9 +43,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "teal", // Navbar Color change
   },
   BottomNav: {
-    position: "absolute",
+    position: "fixed",
     bottom: 0,
     width: "100%",
+    zIndex: 9999,
   },
 }));
 
