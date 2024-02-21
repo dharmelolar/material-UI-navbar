@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+
+
+
 app = FastAPI()
 
-# Allow CORS for all origins (you might want to restrict this in production)
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -12,17 +15,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Variable to store the velocity value
-velocity = ""
 
-# Endpoint to receive and store the velocity value
+
+# FastAPI route 
+@app.get("/quickstick")
+def Quickstick():
+    tag_data = "hello"
+    print(tag_data)
+    return tag_data
+
 @app.post("/update_velocity")
-def update_velocity(new_velocity: str):
-    global velocity
-    velocity = new_velocity
-    return {"message": "Velocity updated successfully"}
-
-# Endpoint to retrieve the stored velocity value
-@app.get("/get_velocity")
-def get_velocity():
-    return velocity
+def Quickstick():
+    tag_data1 = ""
+    print('tag', tag_data1)
+    return tag_data1

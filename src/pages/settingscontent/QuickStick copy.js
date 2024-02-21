@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {Stack, Button} from '@mui/material';
+import {Stack, button} from '@mui/material';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import axios from "axios";
 
 
 function QuickStick() {
@@ -14,7 +13,7 @@ function QuickStick() {
 
   const fetchVelocity = async () => {
     try {
-      const response = await fetch("http://localhost:8000/quickstick");
+      const response = await fetch("http://localhost:8000/get_velocity");
       const data = await response.json();
       setVelocity(data);
     } catch (error) {
@@ -38,15 +37,13 @@ function QuickStick() {
     }
   };
 
-  
-
 
 
   return (
     <div className="manual">
         <Stack className="manual" direction="row" paddingTop={2} spacing={2}>
           <h2>Bot - 1</h2>
-          <TextField size='small' id="outlined-basic" variant="outlined" style={{ width: 100 }} 
+          <TextField size='small' id="outlined-basic" variant="outlined" style={{ width: 50 }} 
           value={velocity} 
           onChange={(e) => setVelocity(e.target.value)} />
 
@@ -54,7 +51,7 @@ function QuickStick() {
           InputProps={{
             endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
           }} />
-          <Button onClick={updateVelocity}>update</Button>
+          <button onClick={updateVelocity}>update</button>
         </Stack>
     </div>
   );

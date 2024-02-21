@@ -6,12 +6,14 @@ import Button from '@mui/material/Button';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
 import All_axispage_B1 from "./manualcontent/all_axispage_B1"
 import Indexer from "./manualcontent/Indexer copy"
+import manual_QS from './manualcontent/manual_QS'
 
 
 function ManualPage() {
   const [showAll_axispage_B1, setShowAll_axispage_B1] = useState(false);
   const [showX_axispage_B1, setShowX_axispage_B1] = useState(false);
   const [showIndexer, setShowIndexer] = useState(false);
+  const [showmanual_QS, setShowmanual_QS] = useState(false);
 
   const handleXAxis_B1Click = () => {
     setShowX_axispage_B1(true);
@@ -25,13 +27,19 @@ function ManualPage() {
     setShowX_axispage_B1(false);
     setShowAll_axispage_B1(false);
   }
+  const handlemanual_QSClick = () => {
+    setShowmanual_QS(true);
+    setShowIndexer(false);
+    setShowX_axispage_B1(false);
+    setShowAll_axispage_B1(false);
+  }
 
   return (
     <Router>
       <div style={{ textAlign: "center" }}>
         <br />
         <h>Manual</h>
-        {showX_axispage_B1 || showAll_axispage_B1 || showIndexer ? null : (
+        {showX_axispage_B1 || showAll_axispage_B1 || showIndexer || showmanual_QS? null : (
           <>
             <div className="manual">
             <h1><Button variant="fab" color="inherit" onClick={handleAllAxis_B1Click}>Bot - 1</Button></h1>
@@ -77,7 +85,7 @@ function ManualPage() {
               <Stack direction="row" spacing={0.5} alignItems="center" justifyContent="center" paddingBottom={0.5}>
                 <Button variant="contained" color="primary">Lift - 1</Button>
                 <Button variant="contained" color="primary" onClick={handleIndexerClick}>Indexer -1</Button>
-                <Button variant="contained" color="secondary">Quick Stick</Button>
+                <Button variant="contained" color="secondary" onClick={handlemanual_QSClick}>Quick Stick</Button>
                 <Button variant="contained" color="secondary">Setup</Button>
               </Stack>
               <Stack direction="row" spacing={0.6} alignItems="center" justifyContent="center">
@@ -96,6 +104,7 @@ function ManualPage() {
       {showX_axispage_B1 && <Route path="/" component={X_axispage_B1} />}
       {showAll_axispage_B1 && <Route path="/" component={All_axispage_B1} />}
       {showIndexer && <Route path="/" component={Indexer} />}
+      {showmanual_QS && <Route path="/" component={manual_QS} />}
     </Router>
   );
 }

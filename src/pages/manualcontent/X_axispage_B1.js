@@ -92,7 +92,7 @@ export default function FloatingActionButtonZoom() {
         </Stack>
 
         <Stack direction="row" paddingTop={2} spacing={0.5}>
-          <TextField variant="outlined" label="Actual Velocity" size="small" defaultValue="NaN" style={{ width: 150 }}
+          <TextField variant="outlined" label="Actual Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
               InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}}/>
 
           <TextField variant="outlined" label="Actual Position" size="small" defaultValue="NaN" style={{ width: 140 }}
@@ -150,13 +150,13 @@ export default function FloatingActionButtonZoom() {
             {/* --------------JOG----------------------------------------------- */}
             <div className="column" style={{ textAlign: "center" }}>
                 <Stack direction="column" paddingTop={2} spacing={2}>
-                  <TextField variant="outlined" label="Jog Velocity" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Jog Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,}}/>
 
-                  <TextField variant="outlined" label="Jog Acceleration" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Jog Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                     InputProps={{endAdornment: <InputAdornment position="end">%</InputAdornment>,}}/>  
                 
-                  <TextField variant="outlined" label="Jog Deceleration" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Jog Deceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>,}}/>
                 </Stack>
 
@@ -184,13 +184,13 @@ export default function FloatingActionButtonZoom() {
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="column" style={{ textAlign: "center" }}>
               <Stack direction="column" paddingTop={2} spacing={2}>
-                  <TextField variant="outlined" label="Homing Velocity" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Homing Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}}/>
 
-                  <TextField variant="outlined" label="Homing Acceleration" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Homing Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
 
-                  <TextField variant="outlined" label="Homing Acceleration" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Homing Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
             
                   <Button variant="contained" color="inherit"><Home/>Home</Button>
@@ -208,13 +208,13 @@ export default function FloatingActionButtonZoom() {
           <TabPanel value={value} index={2} dir={theme.direction}>
             <div className="column" style={{ textAlign: "center" }}>
               <Stack direction="column" paddingTop={2} spacing={2}>
-                  <TextField variant="outlined" label="Moving Velocity" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Moving Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}}/>
 
-                  <TextField variant="outlined" label="Moving Acceleration" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Moving Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
 
-                  <TextField variant="outlined" label="Moving Acceleration" size="small" defaultValue="NaN" style={{ width: 150 }}
+                  <TextField variant="outlined" label="Moving Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
               </Stack>
             </div>
