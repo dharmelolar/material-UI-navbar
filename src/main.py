@@ -1,8 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-
-
-
 
 app = FastAPI()
 
@@ -16,16 +13,16 @@ app.add_middleware(
 )
 
 
+# @app.get("/quickstick")
+# def get_quickstick():
+#     tag_data = ""
+#     print(f"{tag_data=}")
+#     return {"tag_data": tag_data}
 
-# FastAPI route 
-@app.get("/quickstick")
-def Quickstick():
-    tag_data = "hello"
-    print(tag_data)
-    return tag_data
 
 @app.post("/update_velocity")
-def Quickstick():
-    tag_data1 = ""
-    print('tag', tag_data1)
-    return tag_data1
+async def update_velocity(request: Request):
+    data = await request.json()
+    new_velocity = data.get("new_velocity")
+    print(f"New velocity received: {new_velocity}")
+    return {"tag_data1": new_velocity}

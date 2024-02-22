@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from "react";
-import {Stack, Button} from '@mui/material';
+import React, { useState} from "react";
+import { Stack, Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import axios from "axios";
 
 
 function QuickStick() {
   const [velocity, setVelocity] = useState("");
-
-  useEffect(() => {
-    fetchVelocity();
-  }, []);
-
-  const fetchVelocity = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/quickstick");
-      const data = await response.json();
-      setVelocity(data);
-    } catch (error) {
-      console.error("Error fetching velocity:", error);
-    }
-  };
-
 
   const updateVelocity = async () => {
     try {
@@ -38,24 +21,24 @@ function QuickStick() {
     }
   };
 
-  
-
-
-
   return (
     <div className="manual">
-        <Stack className="manual" direction="row" paddingTop={2} spacing={2}>
-          <h2>Bot - 1</h2>
-          <TextField size='small' id="outlined-basic" variant="outlined" style={{ width: 100 }} 
-          value={velocity} 
-          onChange={(e) => setVelocity(e.target.value)} />
+      <Stack className="manual" direction="row" paddingTop={2} spacing={2}>
+        <h2>Bot - 1</h2>
 
-          <TextField size='small' id="outlined-basic" label="update Velocity" variant="outlined" style={{ width: 162 }} 
-          InputProps={{
-            endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
-          }} />
-          <Button onClick={updateVelocity}>update</Button>
-        </Stack>
+        
+
+        <TextField
+          size='small'
+          id="outlined-basic"
+          variant="outlined"
+          style={{ width: 100 }}
+          value={velocity}
+          onChange={(e) => setVelocity(e.target.value)}
+        />
+        
+        <Button onClick={updateVelocity}>Update</Button>
+      </Stack>
     </div>
   );
 }

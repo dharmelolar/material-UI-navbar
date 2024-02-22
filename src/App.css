@@ -99,3 +99,32 @@ h2 { /* Styling of names like status, jog, home, move  */
   padding: 20px;
   text-align: center;
 }
+
+
+/* --------------------ManualQS Table------------------------------------------------- */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+}
+
+.custom-table input {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* ------------------------------------------------------------------------- */
