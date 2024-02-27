@@ -66,7 +66,7 @@ export default function Manual_Ind_lif() {
   return (
     <Grid container className='App' justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={6} lg={3}>
-      <Box className="column" style={{ textAlign: "center" }}>
+      <Box className="column" style={{ textAlign: "center", backgroundColor: isEnabled ? '#e6fff2' : '#fff5eb' }}>
       
     <h2>Indexer & Lift</h2>
 
@@ -180,15 +180,11 @@ export default function Manual_Ind_lif() {
 
                 <Stack direction="row" paddingTop={0.5} paddingBottom={1} spacing={2}>
                   <Tooltip title="Jogg Increase">
-                      <Fab size="small" variant="contained">
-                      <AddIcon />
-                      </Fab>
+                      <Fab size="small" variant="contained"><AddIcon /></Fab>
                   </Tooltip>
 
                   <Tooltip title="Jogg Decrease">
-                      <Fab size="small" variant="contained">
-                      <RemoveIcon/>
-                      </Fab>
+                      <Fab size="small" variant="contained"><RemoveIcon/></Fab>
                   </Tooltip>
 
                 </Stack>
@@ -208,16 +204,10 @@ export default function Manual_Ind_lif() {
                 </Stack>
 
                 <Stack direction="row" paddingTop={1} spacing={1}>
-                  <Tooltip title="Jogg Increase">
-                      <Fab size="small" variant="contained">
-                      <AddIcon />
-                      </Fab>
+                  <Tooltip title="Jogg Increase"><Fab size="small" variant="contained"><AddIcon /></Fab>
                   </Tooltip>
 
-                  <Tooltip title="Jogg Decrease">
-                      <Fab size="small" variant="contained">
-                      <RemoveIcon/>
-                      </Fab>
+                  <Tooltip title="Jogg Decrease"><Fab size="small" variant="contained"><RemoveIcon/></Fab>
                   </Tooltip>
 
                 </Stack>

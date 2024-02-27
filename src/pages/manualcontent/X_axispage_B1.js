@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import {Stack, Button,Grid} from '@mui/material';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
-import { Typography, TextField, Fab, InputAdornment, Tooltip, FormControlLabel, Switch } from '@mui/material';
+import { Typography, TextField, Fab, InputAdornment, Tooltip} from '@mui/material';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -47,6 +47,7 @@ function a11yProps(index) {
 export default function FloatingActionButtonZoom() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const [isEnabled, setIsEnabled] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -58,23 +59,15 @@ export default function FloatingActionButtonZoom() {
 
 
   
-  const [isJogUp, setIsJogUp] = useState(false);
-  const [isJogDown, setIsJogDown] = useState(false);
-  const [isEnabled, setIsEnabled] = useState(false);
 
-  
-  const toggleJogUp = () => {
-    setIsJogUp(!isJogUp);
-  };
-  const toggleJogDown = () => {
-    setIsJogDown(!isJogDown);
-  };
+
+
   
 
   return (
     <Grid container className='App' justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={6} lg={3}>
-      <Box className="column" style={{ textAlign: "center" }} sx={{ minHeight: 330}}>
+      <Box className="column" style={{ textAlign: "center", backgroundColor: isEnabled ? '#e6fff2' : '#fff5eb' }} sx={{ minHeight: 330}}>
       <h2>Status</h2>
         <Stack direction="row" paddingTop={0.5} spacing={0.5}>
             <Button variant="contained" color={isEnabled ? "success" : "inherit"} onClick={() => setIsEnabled(true)}>Enable</Button>
@@ -149,17 +142,13 @@ export default function FloatingActionButtonZoom() {
                 </Stack>
 
                 <Stack direction="row" paddingTop={2} spacing={2}>
-                  <Tooltip title={isJogUp ? "Jogging" : "Jog Up"} style={{ backgroundColor: isJogUp ? "success" : "" }}>
-                  <Fab size="small" variant="contained" color={isJogUp ? "success" : ""}onClick={toggleJogUp}>
-                    <KeyboardArrowUpIcon />
-                  </Fab>
-                </Tooltip>
+                <Tooltip title="Jogg Increase">
+                      <Fab size="small" variant="contained"><AddIcon /></Fab>
+                  </Tooltip>
 
-                <Tooltip title={isJogDown ? "Jogging" : "Jog Down"} style={{ backgroundColor: isJogDown ? "success" : "" }}>
-                  <Fab size="small" variant="contained" color={isJogDown ? "success" : ""}onClick={toggleJogDown}>
-                    <KeyboardArrowDownIcon />
-                  </Fab>
-                </Tooltip>
+                  <Tooltip title="Jogg Decrease">
+                      <Fab size="small" variant="contained"><RemoveIcon/></Fab>
+                  </Tooltip>
               </Stack>
             </div>
           </TabPanel>

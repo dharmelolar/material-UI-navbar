@@ -120,13 +120,11 @@ function ManualPage() {
 
             <div>
               <Stack direction="row" spacing={0.5} alignItems="center" justifyContent="center" paddingBottom={0.5}>
-                <Button variant="contained" color="primary" onClick={handlemanual_LiftClick}>Lift - 1</Button>
                 <Button variant="contained" color="primary" onClick={handleIndexerClick}>Indexer -1</Button>
                 <Button variant="contained" color="secondary" onClick={handlemanual_QSClick}>Quick Stick</Button>
                 <Button variant="contained" color="secondary" onClick={handlemanual_startupClick}>StartUp</Button>
               </Stack>
               <Stack direction="row" spacing={0.6} alignItems="center" justifyContent="center">
-                <Button variant="contained" color="primary" onClick={handlemanual_LiftClick}>Lift - 2</Button>
                 <Button variant="contained" color="primary" onClick={handleIndexerClick}>Indexer - 2</Button>
                 <Button variant="contained" color="secondary" onClick={handlemanual_chargeClick}>Charging</Button>
                 <Button variant="contained" color="secondary">PackML</Button>
