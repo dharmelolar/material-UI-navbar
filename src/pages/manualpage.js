@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import X_axispage_B1 from "./manualcontent/X_axispage_B1";
 import All_axispage_B1 from "./manualcontent/all_axispage_B1";
-import Indexer from "./manualcontent/Indexer";
+import Manual_Ind_lif from "./manualcontent/Indexer_lift";
 import manual_QS from './manualcontent/manual_QS';
 import manual_startup from './manualcontent/manual_startup';
 import manual_charge from "./manualcontent/manual_charge";
@@ -140,7 +140,7 @@ function ManualPage() {
       {/* Define the route for the X_axispage_B1 component */}
       {showX_axispage_B1 && <Route path="/" component={X_axispage_B1} />}
       {showAll_axispage_B1 && <Route path="/" component={All_axispage_B1} />}
-      {showIndexer && <Route path="/" component={Indexer} />}
+      {showIndexer && <Route path="/" component={Manual_Ind_lif} />}
       {showmanual_QS && <Route path="/" component={manual_QS} />}
       {showmanual_startup && <Route path="/" component={manual_startup} />}
       {showmanual_charge && <Route path="/" component={manual_charge} />}

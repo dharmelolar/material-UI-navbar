@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Stack, Button,Grid} from '@mui/material';
-import {Home} from '@material-ui/icons';
+import OtherHousesIcon from '@mui/icons-material/OtherHouses';
 import { Typography, TextField, Fab, InputAdornment, Tooltip, FormControlLabel, Switch } from '@mui/material';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
@@ -57,13 +57,12 @@ export default function FloatingActionButtonZoom() {
   };
 
 
-  const [enabled, setEnabled] = useState(false);
+  
   const [isJogUp, setIsJogUp] = useState(false);
   const [isJogDown, setIsJogDown] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false);
 
-  const toggleEnable = () => {
-    setEnabled(prevEnabled => !prevEnabled);
-  };
+  
   const toggleJogUp = () => {
     setIsJogUp(!isJogUp);
   };
@@ -75,48 +74,36 @@ export default function FloatingActionButtonZoom() {
   return (
     <Grid container className='App' justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={6} lg={3}>
-      <Box className="column" style={{ textAlign: "center" }}>
+      <Box className="column" style={{ textAlign: "center" }} sx={{ minHeight: 330}}>
       <h2>Status</h2>
         <Stack direction="row" paddingTop={0.5} spacing={0.5}>
-            <Tooltip title={enabled ? "Enabled" : "Disabled"} placement="bottom">
-            <FormControlLabel 
-            control={<Switch checked={enabled} onChange={toggleEnable} color="success" />}/>
-            </Tooltip>
-          
-          <Typography variant="body1" className={`typography ${enabled ? 'enabled' : 'disabled'}`}>
-            {enabled ? 'At Home' : 'Not Home'}
-          </Typography>
-
-          <Typography variant="body1" className={`typography ${enabled ? 'enabled' : 'fault'}`}>
-            {enabled ? 'No Fault' : 'Fault'}
-          </Typography>
+            <Button variant="contained" color={isEnabled ? "success" : "inherit"} onClick={() => setIsEnabled(true)}>Enable</Button>
+            <Button variant="contained" color={isEnabled ? "inherit" : "warning"} onClick={() => setIsEnabled(false)}>Disable</Button>
+            <Button variant='outlined' color='success'> Home</Button>
+            <Button variant='outlined' color='error'> Fault</Button>
         </Stack>
 
         <Stack direction="row" paddingTop={2} spacing={0.5}>
-          <TextField variant="outlined" label="Actual Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
-              InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}}/>
+          <TextField type="number" size='small' id="outlined-basic" label="Actual Velocity" variant="outlined" style={{ width: 200 }} 
+            InputProps={{readOnly:true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}} />
 
           <TextField variant="outlined" label="Actual Position" size="small" defaultValue="NaN" style={{ width: 140 }}
-              InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm</InputAdornment>}}/>
+              InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">mm</InputAdornment>}}/>
         </Stack>
 
         <Stack direction="row" paddingTop={2} spacing={0.5}>
-            <TextField variant="outlined" label="Actual Current" size="small" defaultValue="NaN" style={{ width: 145 }}
-              InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">A</InputAdornment>}}/>
+            <TextField variant="outlined" label="Actual Current" size="small" defaultValue="NaN" style={{ width: 170 }}
+              InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">A</InputAdornment>}}/>
 
-            <TextField variant="outlined" label="Actual Current" size="small" defaultValue="NaN" style={{ width: 145 }}
-              InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">Nm</InputAdornment>}}/>  
-          </Stack>
-
-          <Stack direction="row" paddingTop={2} spacing={2}>
-          <TextField type="number" size='small' id="outlined-basic" label="Enter Max Torque" variant="outlined" style={{ width: 295 }}
-          InputProps={{
-            endAdornment: <InputAdornment position="end">Nm</InputAdornment>,
-          }} />
+            <TextField variant="outlined" label="Actual Current" size="small" defaultValue="NaN" style={{ width: 170 }}
+              InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">Nm</InputAdornment>}}/>  
           </Stack>
           
 
-          <Stack direction="row" paddingTop={1.5} spacing={1.8}>
+          <Stack direction="row" padding={1.5} spacing={1.8}>
+            <TextField type="number" size='small' id="outlined-basic" label="Max Torque" variant="outlined" style={{ width: 288 }}
+              InputProps={{endAdornment: <InputAdornment position="end">Nm</InputAdornment>}} />
+
           <Fab size="small" variant="contained" color="error">
           <Tooltip title="Reset"><RestartAltIcon/></Tooltip>
             </Fab>
@@ -194,7 +181,7 @@ export default function FloatingActionButtonZoom() {
                   <TextField variant="outlined" label="Homing Deceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
             
-                  <Button variant="contained" color="inherit"><Home/>Home</Button>
+                  <Button variant="contained" color="inherit"><OtherHousesIcon/>Home</Button>
               </Stack>
             </div>
           </TabPanel>
