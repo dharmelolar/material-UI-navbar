@@ -70,20 +70,20 @@ function ManualQS() {
           InputProps={{endAdornment: <InputAdornment position="end">mm/s²</InputAdornment>}}/>
 
           <TextField variant="outlined" label="Downstream link status" size="small" defaultValue="NaN" style={{ width: 150 }}
-          InputProps={{readOnly: true}}/>
+          InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }}}/>
         </Stack>
 
         <Stack direction="row" paddingTop={1.5} spacing={0.5}>
           <TextField variant="outlined" label="Path State" size="small" defaultValue="NaN" style={{ width: 150 }}
-          InputProps={{readOnly: true}}/>
+          InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }}}/>
 
           <TextField variant="outlined" label="Path Movement Status" size="small" defaultValue="NaN" style={{ width: 150 }}
-          InputProps={{readOnly: true}}/>
+          InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }}}/>
         </Stack>
 
         <Stack direction="row" paddingTop={1.5} spacing={0.5}>
           <TextField variant="outlined" label="Upstream link status" size="small" defaultValue="NaN" style={{ width: 150 }}
-          InputProps={{readOnly: true}}/>
+          InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }}}/>
         </Stack>
 
         
@@ -96,7 +96,7 @@ function ManualQS() {
       <Box className="column" style={{ textAlign: "center" }} minHeight={428}>
           
 
-        <Stack direction="row" spacing={1} padding={1}>
+        <Stack direction="row" spacing={0.5} padding={1}>
 
             <IconButton><Tooltip  title="Move"><GpsFixedIcon/></Tooltip></IconButton>
             <IconButton><Tooltip title="Startup"><PlayCircleFilledIcon/></Tooltip></IconButton>

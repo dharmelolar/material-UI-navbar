@@ -51,9 +51,11 @@ function App() {
             style={{ width: '100px', color: 'white', backgroundColor: enabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0}}>
             {enabled ? 'Enabled' : 'Disabled'}
             </Typography>
-          
 
-          <Button variant="outlined" color="error">Fault</Button>  
+            <Typography variant="body1" className={`typography ${enabled ? 'enabled' : 'fault'}`}>
+            {enabled ? 'No Fault' : 'Fault'}
+             </Typography>
+          
         </Stack>
 
         <Stack direction="row" paddingTop={0.5} spacing={0.5}>

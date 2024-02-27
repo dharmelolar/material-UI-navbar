@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import {Stack, Button,Grid} from '@mui/material';
-import {Home} from '@material-ui/icons';
+import {Stack, Grid} from '@mui/material';
 import { Typography, TextField, Fab, InputAdornment, Tooltip, FormControlLabel, Switch } from '@mui/material';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
@@ -45,7 +44,7 @@ function a11yProps(index) {
   };
 }
 
-export default function FloatingIndexer() {
+export default function FloatingLift() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -58,35 +57,43 @@ export default function FloatingIndexer() {
   };
 
 
-  const [enabled, setEnabled] = useState(false);
+  const [Axis1enabled, setAxis1Enabled] = useState(false);
+  const [Axis2enabled, setAxis2Enabled] = useState(false);
+  const [JOGenabled, setJOGEnabled] = useState(false);
+  const [HOMEenabled, setHOMEEnabled] = useState(false);
 
-  const toggleEnable = () => {
-    setEnabled(prevEnabled => !prevEnabled);
+  const toggleAxis1Enable = () => {
+    setAxis1Enabled(prevAxis1Enabled => !prevAxis1Enabled);
+  };
+  const toggleAxis2Enable = () => {
+    setAxis2Enabled(prevAxis2Enabled => !prevAxis2Enabled);
+  };
+  const toggleJOGEnable = () => {
+    setJOGEnabled(prevJOGEnabled => !prevJOGEnabled);
+  };
+  const toggleHOMEEnable = () => {
+    setHOMEEnabled(prevHOMEEnabled => !prevHOMEEnabled);
   };
 
   
 
   return (
-    <Grid container className='App' justifyContent="center" alignItems="center">
+    <Grid container className='App' justifyContent="center" alignItems="Left">
       <Grid item xs={12} sm={6} lg={3}>
       <Box className="column" style={{ textAlign: "center" }}>
       
     <h2>Indexer</h2>
 
 <Stack direction="row" paddingTop={0.5} spacing={0.5}>
-  <Tooltip title={enabled ? "Enabled" : "Disabled"} placement="bottom">
+  <Tooltip title={Axis1enabled ? "Enabled" : "Disabled"} placement="bottom">
   <FormControlLabel 
-  control={<Switch checked={enabled} onChange={toggleEnable} color="success" />}/>
+  control={<Switch checked={Axis1enabled} onChange={toggleAxis1Enable} color="success" />}/>
   </Tooltip>
   
     <Typography variant="body1" 
-    style={{ width: '100px', color: 'white', backgroundColor: enabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0}}>
-    {enabled ? 'Enabled' : 'Disabled'}
+    style={{ width: '100px', color: 'white', backgroundColor: Axis1enabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0}}>
+    {Axis1enabled ? 'Axis 1' : 'Axis 1'}
     </Typography>
-
-    <Typography variant="body1" className={`typography ${enabled ? 'enabled' : 'fault'}`}>
-    {enabled ? 'No Fault' : 'Fault'}
-     </Typography>
   
 </Stack>
 
@@ -103,6 +110,39 @@ export default function FloatingIndexer() {
     endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
   }} />
 </Stack>
+
+
+
+{/* ------------------------Axis- 2-------------------------------------------------------------------------------- */}
+<Stack direction="row" paddingTop={0.5} spacing={0.5}>
+  <Tooltip title={Axis2enabled ? "Enabled" : "Disabled"} placement="bottom">
+  <FormControlLabel 
+  control={<Switch checked={Axis2enabled} onChange={toggleAxis2Enable} color="success" />}/>
+  </Tooltip>
+  
+    <Typography variant="body1" 
+    style={{ width: '100px', color: 'white', backgroundColor: Axis2enabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0}}>
+    {Axis2enabled ? 'Axis 2' : 'Axis 2'}
+    </Typography>
+  
+</Stack>
+
+<Stack direction="row" paddingTop={0.5} spacing={0.5}>
+  <TextField type="number" size='small' id="outlined-basic" label="Position" variant="outlined" style={{ width: 130 }} 
+  InputProps={{
+    readOnly:true, sx: { backgroundColor: '#f0f0f0' },
+    endAdornment: <InputAdornment position="end">mm</InputAdornment>,
+  }} />
+
+  <TextField type="number" size='small' id="outlined-basic" label="Velocity" variant="outlined" style={{ width: 127 }} 
+  InputProps={{
+    readOnly:true, sx: { backgroundColor: '#f0f0f0' },
+    endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,
+  }} />
+</Stack>
+
+
+
 
 <Stack direction="row" paddingTop={2} spacing={1.5}>
   <Fab size="small" variant="contained" color="error">
@@ -165,24 +205,24 @@ export default function FloatingIndexer() {
 
 
             <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-      <Typography variant="body1" style={{ color: 'white', backgroundColor: enabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0 }}>
-        {enabled ? 'JOG Enabled' : 'JOG Disabled'}
+      <Typography variant="body1" style={{width: '130px',  color: 'white', backgroundColor: JOGenabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0 }}>
+        {JOGenabled ? 'JOG Enabled' : 'JOG Disabled'}
       </Typography>
       <FormControlLabel
-        control={<Switch checked={enabled} onChange={toggleEnable} color="success" />}
+        control={<Switch checked={JOGenabled} onChange={toggleJOGEnable} color="success" />}
       />
-    </Stack>
+            </Stack>
 
     
                 <Stack direction="column" paddingTop={2} spacing={2}>
-                  <TextField variant="outlined" label="Jog Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
-                      InputProps={{endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,}}/>
+                  <TextField variant="outlined" label="Jog Velocity" size="small" defaultValue="NaN" checked={JOGenabled} style={{ width: 200 }}
+                      InputProps={{endAdornment: <InputAdornment position="end">mm/s</InputAdornment>,}} disabled={!JOGenabled}/>
 
                   <TextField variant="outlined" label="Jog Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
-                    InputProps={{endAdornment: <InputAdornment position="end">mm/s²</InputAdornment>,}}/>  
+                    InputProps={{endAdornment: <InputAdornment position="end">mm/s²</InputAdornment>,}} disabled={!JOGenabled}/>  
                 
                   <TextField variant="outlined" label="Jog Deceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
-                      InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s²</InputAdornment>,}}/>
+                      InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s²</InputAdornment>,}} disabled={!JOGenabled}/>
                 </Stack>
 
                 
@@ -196,6 +236,16 @@ export default function FloatingIndexer() {
  {/* -------------HOME------------------------------------------------ */}
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="column" style={{ textAlign: "center" }}>
+
+              <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
+                  <Typography variant="body1" style={{width: '145px',  color: 'white', backgroundColor: JOGenabled ? 'green' : 'gray', padding: '6px 12px', borderRadius: '4px', display: 'inline-block', margin: 0 }}>
+                    {JOGenabled ? 'HOME Enabled' : 'HOME Disabled'}
+                  </Typography>
+                  <FormControlLabel
+                    control={<Switch checked={JOGenabled} onChange={toggleJOGEnable} color="success" />}
+                  />
+              </Stack>
+
               <Stack direction="column" paddingTop={2} spacing={2}>
                   <TextField variant="outlined" label="Homing Velocity" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}}/>
@@ -243,7 +293,6 @@ export default function FloatingIndexer() {
         </SwipeableViews>
       </Box>
       </Grid>
-      Toggle button for Mode is fine?
     </Grid>
   );
 }

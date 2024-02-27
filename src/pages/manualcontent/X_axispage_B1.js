@@ -70,6 +70,7 @@ export default function FloatingActionButtonZoom() {
   const toggleJogDown = () => {
     setIsJogDown(!isJogDown);
   };
+  
 
   return (
     <Grid container className='App' justifyContent="center" alignItems="center">
@@ -190,7 +191,7 @@ export default function FloatingActionButtonZoom() {
                   <TextField variant="outlined" label="Homing Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
 
-                  <TextField variant="outlined" label="Homing Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
+                  <TextField variant="outlined" label="Homing Deceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
             
                   <Button variant="contained" color="inherit"><Home/>Home</Button>
@@ -214,7 +215,7 @@ export default function FloatingActionButtonZoom() {
                   <TextField variant="outlined" label="Moving Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
 
-                  <TextField variant="outlined" label="Moving Acceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
+                  <TextField variant="outlined" label="Moving Deceleration" size="small" defaultValue="NaN" style={{ width: 200 }}
                       InputProps={{readOnly: true, endAdornment: <InputAdornment position="end">%</InputAdornment>}}/>  
               </Stack>
             </div>
