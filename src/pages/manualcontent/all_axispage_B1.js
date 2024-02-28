@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Stack, Grid } from '@mui/material';
 import { Button, TextField, InputAdornment, Fab, Tooltip } from '@mui/material';
 import Box from '@mui/material/Box';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import axios from 'axios';
 
 export default function Manual_charge() {
   const [isEnabled, setIsEnabled] = useState(false);
+  const [actualPosition, setActualPosition] = useState('');
+
+// ---------------------fetch PLC tag values ----------------------------------------------------------------------
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/velocity");
+        console.log("Response data:", response.data);
+        setActualPosition(response.data.actual_position);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    const interval = setInterval(fetchData, 1000); // Fetch data every 1000 milliseconds (1 second)
+
+    return () => clearInterval(interval); // Cleanup function to clear interval on component unmount
+  }, []);
+// -------------------------------------------------------------------------------------------------------------------
 
   const handleEnable = () => {
     setIsEnabled(true);
@@ -39,7 +61,7 @@ export default function Manual_charge() {
           </Stack>
 
           <Stack direction="row" paddingTop={2} spacing={0.5}>
-            <TextField type="number" size='small' id="outlined-basic" label="Actual Velocity" variant="outlined" style={{ width: 130 }}
+            <TextField type="number" size='small' id="outlined-basic" value={actualPosition} label="Actual Velocity" variant="outlined" style={{ width: 130 }}
               InputProps={{ readOnly: true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">mm/s</InputAdornment> }} />
 
             <TextField variant="outlined" label="Actual Position" size="small" defaultValue="NaN" style={{ width: 170 }}
