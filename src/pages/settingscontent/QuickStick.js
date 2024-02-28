@@ -8,7 +8,7 @@ function QuickStick() {
 
   const updateVelocity = async () => {
     try {
-      await fetch("http://localhost:8000/update_velocity", {
+       fetch("http://localhost:8000/update_velocity", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -31,7 +31,7 @@ function ManualQS() {
 
       {/* --------------------------Block -1------------------------------------------------------------------- */}
       <Grid item xs={12} sm={6} lg={3}>
-      <Box className="column" style={{ textAlign: "center" }}>
+      <Box className="column" style={{ textAlign: "center"}}>
         
         <Stack direction="row" paddingTop={2} spacing={0.5}>
           <TextField variant="outlined" label="Startup path ID" size="small" defaultValue="NaN" style={{ width: 150 }}/>

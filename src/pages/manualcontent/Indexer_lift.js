@@ -45,7 +45,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Manual_Ind_lif() {
+export default function Manual_Ind_lift() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
   const [isEnabled, setIsEnabled] = useState(false);
