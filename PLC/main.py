@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-PLC_IP= '192.168.1.10/0'
+PLC_IP= '127.0.0.1/2'
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -15,18 +15,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Simulating PLC tag values
-position = {'value': 0}
-global velocity
-velocity = {'value': 0}
 
 
 @app.get("/velocity")
 async def get_velocity():
    with LogixDriver(PLC_IP) as plc:
-        actual_position = plc.read('XY121_Z1.StartActualPosition')
-        print("Actual Position:", actual_position.value)
-        return {'actual_position': actual_position.value}
+        actual_velocity = plc.read('velocity')
+        actual_position = plc.read('position')
+        BA1_actual_velocity = plc.read('BA1_Actual_Velocity')
+        BA1_actual_position = plc.read('BA1_Actual_Position')
+        
+        return {'actual_velocity': actual_velocity.value, 'actual_position': actual_position.value, 
+                'BA1_actual_velocity': BA1_actual_velocity.value, 'BA1_actual_position': BA1_actual_position.value}
+
+
+# @app.post("/velocity")
+# async def post_velocity():
+#    with LogixDriver(PLC_IP) as plc:
+#         Target_Position = plc.write('target_pos')
+        
+#         return {'actual_position': Target_Position.value}
 
 
 
