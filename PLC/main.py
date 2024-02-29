@@ -27,6 +27,19 @@ async def get_velocity():
         
         return {'actual_velocity': actual_velocity.value, 'actual_position': actual_position.value, 
                 'BA1_actual_velocity': BA1_actual_velocity.value, 'BA1_actual_position': BA1_actual_position.value}
+   
+
+
+@app.post("/target_pos")
+async def update_target_pos(target_pos: int):
+    with LogixDriver(PLC_IP) as plc:
+        plc.write('target_pos', target_pos)
+    return {"message": "Target position updated successfully"}
+
+
+
+
+
 
 
 # @app.post("/velocity")

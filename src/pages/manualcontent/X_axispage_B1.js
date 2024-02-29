@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Stack, Button,Grid} from '@mui/material';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
 import { Typography, TextField, Fab, InputAdornment, Tooltip} from '@mui/material';
@@ -57,6 +57,35 @@ export default function FloatingActionButtonZoom() {
     setValue(index);
   };
 
+  //-------------------const for PLC tags----------------------------------------------------------------------------
+
+  const [actualVelocity, setActualVelocity] = useState('');
+  const [actualPosition, setActualPosition] = useState('');
+  
+
+
+  // ---------------------fetch PLC tag values ----------------------------------------------------------------------
+
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/velocity');                             // http://127.0.0.1:8000/getData?params=['version;]');
+      const data = await response.json();
+      setActualVelocity(data.actual_velocity);
+      setActualPosition(data.actual_position);
+
+      
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const intervalId = setInterval(fetchData, 1000); // Fetch data every second
+  return () => clearInterval(intervalId); // Cleanup function to clear interval on component unmount
+
+}, []); 
+// -------------------------------------------------------------------------------------------------------------------
 
   
 
@@ -77,10 +106,10 @@ export default function FloatingActionButtonZoom() {
         </Stack>
 
         <Stack direction="row" paddingTop={2} spacing={0.5}>
-          <TextField type="number" size='small' id="outlined-basic" label="Actual Velocity" variant="outlined" style={{ width: 200 }} 
+          <TextField type="number" size='small' value={actualVelocity} id="outlined-basic" label="Actual Velocity" variant="outlined" style={{ width: 200 }} 
             InputProps={{readOnly:true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">mm/s</InputAdornment>}} />
 
-          <TextField variant="outlined" label="Actual Position" size="small" defaultValue="NaN" style={{ width: 140 }}
+          <TextField variant="outlined" value={actualPosition} label="Actual Position" size="small" defaultValue="NaN" style={{ width: 140 }}
               InputProps={{readOnly: true, sx: { backgroundColor: '#f0f0f0' }, endAdornment: <InputAdornment position="end">mm</InputAdornment>}}/>
         </Stack>
 
