@@ -15,7 +15,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 const useStyles = makeStyles(()=>({
     link:{
         textDecoration:"none",
-        color: "blue",
+        color: "black",
         fontSize: "20px",
     },
     icon:{
@@ -41,19 +41,13 @@ function DrawerComponent() {
           <Divider/>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about" className={classes.link}>About</Link>
+              <Link to="/manualpage" className={classes.link}>Manual</Link>
             </ListItemText>
           </ListItem>
           <Divider/>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/contact" className={classes.link}>Contact</Link>
-            </ListItemText>
-          </ListItem>
-          <Divider/>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/about" className={classes.link}>Faq</Link>
+              <Link to="/settingspage" className={classes.link}>Settings</Link>
             </ListItemText>
           </ListItem>
           <Divider/>

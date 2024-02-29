@@ -1,0 +1,141 @@
+
+p {
+  color: #39433a; /* Replace with your desired color */
+}
+
+.manual {
+  box-shadow: 0 0 10px rgba(123, 38, 38, 0.2);
+  width: fit-content;
+  margin: 0 auto; /* This will center the content horizontally */
+}
+
+
+/* Current page Name */
+h {
+  font-size: 25px;
+  margin-block: 50px;
+  font-weight: bold;
+  color: rgb(88, 90, 89);
+
+}
+
+/* Manual Page Bot number */
+h1 {               
+  font-size: 16px;
+  margin-block: 4px;
+  padding: 5px;
+}
+
+
+
+/* Style between sub divs of manual page content, status, jog, home, move */
+.App {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.column { /*  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px; /* Add padding inside the box */
+  box-shadow: 0 0 10px rgba(123, 38, 38, 0.2);
+}
+
+.button-container {
+  align-items: baseline;
+}
+
+h2 { /* Styling of names like status, jog, home, move  */
+  margin-bottom: 1px;
+  color: rgb(132, 132, 171);
+  padding: 2px 10px; /* Add padding inside the box */
+  /* width: 150px; */
+  
+}
+    
+
+.enabledIcon {
+  background-color: green; /* Change to any color you prefer */
+  color: green;
+}
+
+/*------------------- Status settings for Typography ----------------------------------------------*/
+.typography {
+  width: 100px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: '0 0.5rem 0 0';
+}
+
+.enabled {
+  background-color: green;
+}
+
+.disabled {
+  background-color: gray;
+}
+
+.fault {
+  background-color: red;
+}
+/* ---------------------------------------------------------------------------------------- */
+
+
+
+/* ----------------Grid Settings---------------------------------------------------------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax values according to your needs */
+  gap: 20px; /* Adjust gap as needed */
+}
+
+.grid-item {
+  /* Add styling for your grid items */
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* --------------------ManualQS Table------------------------------------------------- */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+}
+
+.custom-table input {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* ------------------------------------------------------------------------- */
+
+/* ---------------------------Manual Charge page font styling---------------------- */
+
+h4{
+  margin: 0;
+  font-size: x-small;
+  align-items: center;
+  display: flex;
+  color: rgb(80, 78, 78);
+  border: #39433a;
+}

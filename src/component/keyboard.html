@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numeric Keyboard</title>
+<style>
+  .numeric-keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    max-width: 200px; /* Adjust as needed */
+    margin: auto;
+  }
+
+  .numeric-keyboard button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .numeric-keyboard button:hover {
+    background-color: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+<div class="numeric-keyboard">
+  <input type="text" id="display" readonly>
+  <button onclick="addToDisplay(1)">1</button>
+  <button onclick="addToDisplay(2)">2</button>
+  <button onclick="addToDisplay(3)">3</button>
+  <button onclick="addToDisplay(4)">4</button>
+  <button onclick="addToDisplay(5)">5</button>
+  <button onclick="addToDisplay(6)">6</button>
+  <button onclick="addToDisplay(7)">7</button>
+  <button onclick="addToDisplay(8)">8</button>
+  <button onclick="addToDisplay(9)">9</button>
+  <button onclick="addToDisplay(0)">0</button>
+  <button onclick="addDecimal()">.</button>
+  <button onclick="removeLast()">Backspace</button>
+  <button onclick="submit()">Enter</button>
+</div>
+
+<script>
+  function addToDisplay(value) {
+    document.getElementById("display").value += value;
+  }
+
+  function addDecimal() {
+    let displayValue = document.getElementById("display").value;
+    if (displayValue.indexOf('.') === -1) {
+      document.getElementById("display").value += '.';
+    }
+  }
+
+  function removeLast() {
+    let displayValue = document.getElementById("display").value;
+    document.getElementById("display").value = displayValue.slice(0, -1);
+  }
+
+  function submit() {
+    let displayValue = document.getElementById("display").value;
+    alert("Entered value: " + displayValue);
+  }
+</script>
+</body>
+</html>
